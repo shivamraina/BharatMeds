@@ -1,10 +1,10 @@
 import React from "react";
-import { View, SafeAreaView, Image } from "react-native";
+import { View, SafeAreaView, Image, Button } from "react-native";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Medicines from "../components/Medicines";
 
-export default function Home() {
+export default function Home({navigation}) {
     const medicines = [
         {
             "id": 1,
@@ -113,8 +113,10 @@ export default function Home() {
             <View style={{backgroundColor: "white", padding: 15}}>
                 <Navbar />
                 <Searchbar />
+                <Button onPress = {()=> navigation.navigate('UploadMedicineDetails')} title="Upload Medicine" ></Button>
                 <Medicines medicines={medicines} />
             </View>
         </SafeAreaView>
     );
 }
+
