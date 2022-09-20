@@ -1,18 +1,20 @@
 import React from "react";
-import { Image, ScrollView, View, Text } from "react-native";
+import { Image, ScrollView, View, Text, TouchableOpacity } from "react-native";
 import MedicineInfo from "./MedicineInfo";
 
 export default function Medicines({medicines}) {
     return (
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <>
             {medicines.map((medicine, index) => (
-                <View key={index}>
+                <TouchableOpacity key={index} style={{borderRadius: 9, borderColor: "grey", borderWidth: 1, padding: 5, margin: 10}}>
                     <Image
                         source={medicine.path}
                         style={{
-                            width: "100%",
-                            height: 180,
-                            resizeMode: "contain"
+                            width: "90%",
+                            height: 150,
+                            resizeMode: "contain",
+                            margin: 10,
+                            alignItems: "center"
                         }}
                     />
                     <View>
@@ -24,8 +26,8 @@ export default function Medicines({medicines}) {
                             manufacturer={medicine.manufacturer}
                         />
                     </View>
-                </View>
+                </TouchableOpacity>
             ))}
-        </ScrollView>
+        </>
     );
 }

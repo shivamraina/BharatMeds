@@ -1,8 +1,11 @@
 import React from "react";
-import { View, SafeAreaView, Image } from "react-native";
+import { View, SafeAreaView, Image, Text } from "react-native";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
 import Medicines from "../components/Medicines";
+import { Divider } from "react-native-elements";
+import BottomTabs from "../components/BottomTabs";
+import { ScrollView } from "react-native";
 
 export default function Home() {
     const medicines = [
@@ -113,8 +116,12 @@ export default function Home() {
             <View style={{backgroundColor: "white", padding: 15}}>
                 <Navbar />
                 <Searchbar />
-                <Medicines medicines={medicines} />
             </View>
+            <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: "white"}}>
+                <Medicines medicines={medicines}/>
+            </ScrollView>
+            <Divider width={1} />
+            <BottomTabs />
         </SafeAreaView>
     );
 }
