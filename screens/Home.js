@@ -17,7 +17,8 @@ export default function Home() {
             "quantity": "5",
             "expiry": "16-12-2025",
             "manufacturer": "Rhone-Poulenc India Ltd.",
-            "path": require("../assets/avomine.jpg")
+            "path": require("../assets/avomine.jpg"),
+            "price_per_item": "120 INR"
         },,
         {
             "id": 2,
@@ -27,7 +28,8 @@ export default function Home() {
             "quantity": "15",
             "expiry": "6-10-2023",
             "manufacturer": "Inabata Pharmaceutical",
-            "path": require("../assets/azithromycin.jpg")
+            "path": require("../assets/azithromycin.jpg"),
+            "price_per_item": "100 INR"
         },
         {
             "id": 3,
@@ -37,7 +39,8 @@ export default function Home() {
             "quantity": "35",
             "expiry": "10-3-2025",
             "manufacturer": "GlaxoSmithKline",
-            "path": require("../assets/crocin.png")
+            "path": require("../assets/crocin.png"),
+            "price_per_item": "90 INR"
         },
         {
             "id": 4,
@@ -47,7 +50,8 @@ export default function Home() {
             "quantity": "35",
             "expiry": "10-3-2025",
             "manufacturer": "Micro Labs Ltd.",
-            "path": require("../assets/dolo.jpg")
+            "path": require("../assets/dolo.jpg"),
+            "price_per_item": "190 INR"
         },
         {
             "id": 5,
@@ -57,7 +61,8 @@ export default function Home() {
             "quantity": "10",
             "expiry": "01-03-2025",
             "manufacturer": "Pfizer Ltd.",
-            "path": require("../assets/dolonex dt.jpg")
+            "path": require("../assets/dolonex dt.jpg"),
+            "price_per_item": "80 INR"
         },
         {
             "id": 6,
@@ -67,7 +72,8 @@ export default function Home() {
             "quantity": "50",
             "expiry": "01-03-2025",
             "manufacturer": "Jagsonpal Pharmaceuticals Ltd",
-            "path": require("../assets/equirex.jpg")
+            "path": require("../assets/equirex.jpg"),
+            "price_per_item": "20 INR"
         },
         {
             "id": 7,
@@ -77,7 +83,8 @@ export default function Home() {
             "quantity": "5",
             "expiry": "16-12-2025",
             "manufacturer": "Reckit Benckiser India Pvt. Ltd.",
-            "path": require("../assets/moov.jpg")
+            "path": require("../assets/moov.jpg"),
+            "price_per_item": "80 INR"
         },
         {
             "id": 8,
@@ -87,7 +94,8 @@ export default function Home() {
             "quantity": "5",
             "expiry": "16-12-2025",
             "manufacturer": "Cipla Ltd.",
-            "path": require("../assets/olox.jpg")
+            "path": require("../assets/olox.jpg"),
+            "price_per_item": "290 INR"
         },
         {
             "id": 9,
@@ -97,7 +105,8 @@ export default function Home() {
             "quantity": "5",
             "expiry": "09-08-2025",
             "manufacturer": "Halewood Laboratories",
-            "path": require("../assets/ors.jpg")
+            "path": require("../assets/ors.jpg"),
+            "price_per_item": "10 INR"
         },
         {
             "id": 10,
@@ -107,7 +116,8 @@ export default function Home() {
             "quantity": "5",
             "expiry": "09-08-2025",
             "manufacturer": "Cipla Ltd.",
-            "path": require("../assets/pantosec.jpg")
+            "path": require("../assets/pantosec.jpg"),
+            "price_per_item": "100 INR"
         }
     ];
 
