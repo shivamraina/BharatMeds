@@ -11,7 +11,7 @@ export default function Signout() {
                 borderRadius: 30
             }}
         >
-            <Text style={{color:"white", fontSize: 18, fontWeight: '900'}}>Signout</Text>
+            <Text style={{color:"white", fontSize: 18, fontWeight: '900'}}>Logout</Text>
         </TouchableOpacity>
     );
 }
