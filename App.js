@@ -10,10 +10,21 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Navbar from "./components/Navbar";
 import HomeScreen from "./screens/Home"
+import SubmittedScreen from "./screens/Submitted"
 import UploadMedicineDetailsScreen from "./screens/UploadMedicineDetails"
 
 const Stack = createNativeStackNavigator();
-
+const config = {
+  animation: 'spring',
+  config: {
+    stiffness: 1000,
+    damping: 500,
+    mass: 3,
+    overshootClamping: true,
+    restDisplacementThreshold: 0.01,
+    restSpeedThreshold: 0.01,
+  },
+};
 const MyStack = () => {
   return (
     <NavigationContainer>
@@ -24,6 +35,15 @@ const MyStack = () => {
           options={<Navbar />}
         />
         <Stack.Screen name="UploadMedicineDetails" component={UploadMedicineDetailsScreen} />
+        <Stack.Screen 
+        options={{
+          headerShown: false,
+          transitionSpec: {
+            open: config,
+            close: config,
+          },
+        }} 
+          name="Submitted" component={SubmittedScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
