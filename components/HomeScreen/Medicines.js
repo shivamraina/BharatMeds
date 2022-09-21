@@ -24,6 +24,7 @@ export default function Medicines({medicines}) {
                             expiry={medicine.expiry}
                             quantity={medicine.quantity}
                             manufacturer={medicine.manufacturer}
+                            price_per_unit={medicine.price_per_item}
                         />
                     </View>
                 </TouchableOpacity>
