@@ -1,5 +1,10 @@
-import Home from './screens/Home';
+import { NavigationContainer } from '@react-navigation/native';
+import Tabs from './navigation/Tabs';
 
 export default function App() {
-  return <Home />;
+  return (
+    <NavigationContainer>
+      <Tabs />
+    </NavigationContainer>
+  );
 }
