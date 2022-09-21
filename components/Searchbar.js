@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
-import { TextInput } from "react-native-web";
+import { TextInput } from "react-native";
 
 export default function Searchbar() {
     return (
