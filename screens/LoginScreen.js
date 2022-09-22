@@ -85,7 +85,7 @@ const LoginScreen = ({ navigation }) => {
     setMessageType(type);
   };
 
-  const handleGoogleSignin = () => {
+  const handleGoogleSignin = ({navigation}) => {
     setGoogleSubmitting(true);
     const config = {
       clientId: `802966816069-o0ahg62le2b6adbl7tmrrm2e7cagaodp.apps.googleusercontent.com`,
@@ -171,7 +171,7 @@ const LoginScreen = ({ navigation }) => {
                 <MsgBox type={messageType}>{message}</MsgBox>
 
                 {!isSubmitting && (
-                  <StyledButton onPress={handleSubmit}>
+                  <StyledButton onPress={() => navigation.navigate('Home')}>
                     <ButtonText>Login</ButtonText>
                   </StyledButton>
                 )}

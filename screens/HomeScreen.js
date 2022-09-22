@@ -11,7 +11,7 @@ export default function HomeScreen({navigation}) {
     return (
         <SafeAreaView  style={{backgroundColor: "#eee", flex:1}}>
             <View style={{backgroundColor: "white", padding: 15}}>
-                <Navbar />
+                <Navbar navigation={navigation}/>
                 <SearchBar />
             </View>
             <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: "white"}}>

@@ -59,11 +59,11 @@ export default function Home({navigation}) {
           })
         }
       >
-        <Tab.Screen name="HomeScreen" component={HomeScreen} options={{headerShown: false}}/>        
-        <Tab.Screen name="Cart" component={CartScreen} options={{headerShown: false}}/>        
-        <Tab.Screen name="Upload" component={UploadScreen} options={{headerShown: false}}/>        
-        <Tab.Screen name="Activity" component={ActivityScreen} options={{headerShown: false}}/>        
-        <Tab.Screen name="Profile" component={ProfileScreen} options={{headerShown: false}}/>           
+        <Tab.Screen name="HomeScreen" component={HomeScreen} options={{headerShown: false}} navigation={navigation}/>        
+        <Tab.Screen name="Cart" component={CartScreen} options={{headerShown: false}} navigation={navigation}/>        
+        <Tab.Screen name="Upload" component={UploadScreen} options={{headerShown: false}} navigation={navigation}/>        
+        <Tab.Screen name="Activity" component={ActivityScreen} options={{headerShown: false}} navigation={navigation}/>        
+        <Tab.Screen name="Profile" component={ProfileScreen} options={{headerShown: false}} navigation={navigation}/>           
       </Tab.Navigator>
       );
 }
