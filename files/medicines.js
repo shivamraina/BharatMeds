@@ -8,7 +8,7 @@ export const medicines = [
         "expiry": "16-12-2025",
         "manufacturer": "Rhone-Poulenc India Ltd.",
         "path": require("../assets/avomine.jpg"),
-        "price_per_item": "120 INR"
+        "price_per_item": "120 ₹"
     },,
     {
         "id": 2,
@@ -19,7 +19,7 @@ export const medicines = [
         "expiry": "6-10-2023",
         "manufacturer": "Inabata Pharmaceutical",
         "path": require("../assets/azithromycin.jpg"),
-        "price_per_item": "100 INR"
+        "price_per_item": "100 ₹"
     },
     {
         "id": 3,
@@ -30,7 +30,7 @@ export const medicines = [
         "expiry": "10-3-2025",
         "manufacturer": "GlaxoSmithKline",
         "path": require("../assets/crocin.png"),
-        "price_per_item": "90 INR"
+        "price_per_item": "90 ₹"
     },
     {
         "id": 4,
@@ -41,7 +41,7 @@ export const medicines = [
         "expiry": "10-3-2025",
         "manufacturer": "Micro Labs Ltd.",
         "path": require("../assets/dolo.jpg"),
-        "price_per_item": "190 INR"
+        "price_per_item": "190 ₹"
     },
     {
         "id": 5,
@@ -52,7 +52,7 @@ export const medicines = [
         "expiry": "01-03-2025",
         "manufacturer": "Pfizer Ltd.",
         "path": require("../assets/dolonex.jpg"),
-        "price_per_item": "80 INR"
+        "price_per_item": "80 ₹"
     },
     {
         "id": 6,
@@ -63,7 +63,7 @@ export const medicines = [
         "expiry": "01-03-2025",
         "manufacturer": "Jagsonpal Pharmaceuticals Ltd",
         "path": require("../assets/equirex.jpg"),
-        "price_per_item": "20 INR"
+        "price_per_item": "20 ₹"
     },
     {
         "id": 7,
@@ -74,7 +74,7 @@ export const medicines = [
         "expiry": "16-12-2025",
         "manufacturer": "Reckit Benckiser India Pvt. Ltd.",
         "path": require("../assets/moov.jpg"),
-        "price_per_item": "80 INR"
+        "price_per_item": "80 ₹"
     },
     {
         "id": 8,
@@ -85,7 +85,7 @@ export const medicines = [
         "expiry": "16-12-2025",
         "manufacturer": "Cipla Ltd.",
         "path": require("../assets/olox.jpg"),
-        "price_per_item": "290 INR"
+        "price_per_item": "290 ₹"
     },
     {
         "id": 9,
@@ -96,7 +96,7 @@ export const medicines = [
         "expiry": "09-08-2025",
         "manufacturer": "Halewood Laboratories",
         "path": require("../assets/ors.jpg"),
-        "price_per_item": "10 INR"
+        "price_per_item": "10 ₹"
     },
     {
         "id": 10,
@@ -107,6 +107,6 @@ export const medicines = [
         "expiry": "09-08-2025",
         "manufacturer": "Cipla Ltd.",
         "path": require("../assets/pantosec.jpg"),
-        "price_per_item": "100 INR"
+        "price_per_item": "100 ₹"
     }
 ];

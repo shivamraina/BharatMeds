@@ -68,6 +68,7 @@ export function DatePicker() {
    const changeSelectedDate = (event, selectedDate) => {
       const currentDate = selectedDate || mydate;
       setDate(currentDate);
+      setShow(false);
    };
    const showMode = (currentMode) => {
       setShow(true);
@@ -101,10 +102,12 @@ export function TimePicker() {
     const changeSelectedDate = (event, selectedDate) => {
        const currentDate = selectedDate || mydate;
        setDate(currentDate);
+       setShow(false);
     };
     const showMode = (currentMode) => {
        setShow(true);
        setMode(currentMode);
+       
     };
     const displayTimepicker = () => {
        showMode('time');
@@ -138,7 +141,7 @@ const styles = StyleSheet.create({
 //    },
    regform: {
       marginTop: 30,
-      marginBottom: 30,
+      marginBottom: 60,
         alignSelf: 'stretch',
     },
     header: {
