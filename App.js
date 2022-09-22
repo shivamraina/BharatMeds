@@ -1,3 +1,4 @@
+
 // import Home from './screens/Home';
 
 // export default function App() {
@@ -32,9 +33,13 @@ const MyStack = () => {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={<Navbar />}
+          options={{
+            headerShown: false,
+          }} 
         />
-        <Stack.Screen name="UploadMedicineDetails" component={UploadMedicineDetailsScreen} />
+        <Stack.Screen  options={{
+            headerShown: false,
+          }}  name="UploadMedicineDetails" component={UploadMedicineDetailsScreen} />
         <Stack.Screen 
         options={{
           headerShown: false,

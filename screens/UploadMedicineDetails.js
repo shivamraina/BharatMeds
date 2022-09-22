@@ -3,6 +3,8 @@ import {StyleSheet, View,TextInput, Button, Text, TouchableOpacity, ScrollView ,
 import DateTimePicker from '@react-native-community/datetimepicker';
 import RadioButton from '../components/RadioButton';
 import { Formik } from 'formik'
+import Navbar from "../components/Navbar";
+import { Divider } from "@react-native-material/core";
 
 const values= [
     {
@@ -19,11 +21,15 @@ const values= [
 export default function  UploadMedidiceDetails({navigation}) {
    
         return(
+         <SafeAreaView  style={{backgroundColor: "#eee", flex:1}}>
+            <View style={{backgroundColor: "white", padding: 15}}>
+         <Navbar />
+         <Divider style={{ marginTop: 15}} leadingInset={16} />
             <Formik>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <View style={styles.regform}>
-                        <Text style={styles.header}>Upload Medicines</Text>
+                        <Text style={styles.header}>Upload Medicine Details</Text>
                         <TextInput style={styles.textinput} placeholder="Medicine Name" underlineColorAndroid={'transparent'}/>
                         <TextInput style={styles.textinput} placeholder="Manufacturer Name" underlineColorAndroid={'transparent'}/>
                         <TextInput style={styles.textinput} placeholder="Illness cured" underlineColorAndroid={'transparent'}/>
@@ -48,6 +54,8 @@ export default function  UploadMedidiceDetails({navigation}) {
                 </View>
             </ScrollView>
             </Formik>
+            </View>
+        </SafeAreaView>
         );
     
 }
@@ -129,13 +137,15 @@ const styles = StyleSheet.create({
 //      flexDirection: 'row',
 //    },
    regform: {
+      marginTop: 30,
+      marginBottom: 30,
         alignSelf: 'stretch',
     },
     header: {
-        fontSize: 24,
+        fontSize: 20,
         color : '#213562',
         paddingBottom: 10,
-        marginBottom: 40,
+        marginBottom: 20,
         borderBottomColor: "red",
         borderBottomWidth: 1,
     },

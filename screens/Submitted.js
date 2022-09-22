@@ -6,7 +6,7 @@ export default function Submitted({navigation}) {
         return(
             <View style={styles.image} >
                 <Image source={require('../assets/check.png')} style={{ width: 70, height: 70 }}/>
-                <h2>Submitted Successfully</h2>
+                <Text>Submitted Successfully</Text>
                 <Text style={{ fontSize: 20 }}>Thanks for submitting !</Text>
             </View>
         );
