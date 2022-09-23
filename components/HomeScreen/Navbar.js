@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity, Text } from "react-native";
 
-export default function Navbar() {
+export default function Navbar({navigation}) {
     return (
         <View style={{flexDirection: "row", justifyContent: "space-between"}}>
             <TouchableOpacity
@@ -23,6 +23,7 @@ export default function Navbar() {
                     borderRadius: 30,
                     marginTop: 7
                 }}
+                onPress = {() => navigation.navigate('Login')}
             >
                 <Text style={{color:"white", fontSize: 18, fontWeight: '900'}}>Logout</Text>
             </TouchableOpacity>

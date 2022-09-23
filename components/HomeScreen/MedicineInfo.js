@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Button} from "react-native";
 
 export default function MedicineInfo({name, expiry, symptoms, manufacturer, quantity, price_per_unit}) {
     return (
@@ -44,13 +44,13 @@ export default function MedicineInfo({name, expiry, symptoms, manufacturer, quan
                     {" "+manufacturer}
                 </Text>
             </View>
-            <View style={{marginTop: 3, flexDirection: 'row', justifyContent: 'flex-end'}}>
-                <Text style={{fontWeight: "700", color: 'red'}}>
-                    Price Per Unit : 
+            <View style={{margin: 6, flexDirection: 'row', justifyContent: 'space-between'}}>
+                <>
+                <Text style={{fontWeight: "900", color: 'white', paddingTop: 10, borderRadius: 5, borderWidth: 1, paddingHorizontal: 8, backgroundColor: 'green'}}>
+                    Price : {price_per_unit}
                 </Text>
-                <Text style={{color: 'green', fontWeight: '900'}}>
-                    {" "+price_per_unit}
-                </Text>
+                </>
+                <Button title="Add to Cart" onPress={() => alert('Item Added to Cart')}>Add to Cart</Button>
             </View>
         </View>
     );

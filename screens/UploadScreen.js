@@ -39,7 +39,7 @@ export default function UploadScreen({navigation}) {
         return(
          <SafeAreaView  style={{backgroundColor: "#eee", flex:1}}>
             <View style={{backgroundColor: "white", padding: 15}}>
-         <Navbar />
+         <Navbar navigation={navigation}/>
          <Divider style={{ marginTop: 15}} leadingInset={16} />
             <Formik>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -129,6 +129,7 @@ export function TimePicker() {
     const showMode = (currentMode) => {
        setShow(true);
        setMode(currentMode);
+       
     };
     const displayTimepicker = () => {
        showMode('time');
@@ -162,7 +163,11 @@ const styles = StyleSheet.create({
 //    },
    regform: {
       marginTop: 30,
+<<<<<<< HEAD
       marginBottom: 50,
+=======
+      marginBottom: 60,
+>>>>>>> 87d8d82d3c40eadd67a14a9a6013e8528ade368c
         alignSelf: 'stretch',
     },
     header: {
