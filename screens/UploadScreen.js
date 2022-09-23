@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View,TextInput, Button, Text, TouchableOpacity, ScrollView ,SafeAreaView  } from "react-native";
+import {StyleSheet, View,TextInput, Button, Text, TouchableOpacity, ScrollView ,SafeAreaView, Image  } from "react-native";
 import DateTimePicker from '@react-native-community/datetimepicker';
 import RadioButton from '../components/RadioButton';
 import { Formik } from 'formik'
@@ -17,9 +17,25 @@ const values= [
     },
 ];
 
+function Fun({count1}){
+   
+      if(count1%2==1)
+      {
+         return(
+            <Image source={require('../assets/nimsulide.jpg')} style={{ width:100, height: 100, marginHorizontal: 50, marginVertical: 20}}/>
+         );
+      }
+      else{
+         return null;
+      }
+   
+}
 
 export default function UploadScreen({navigation}) {
-   
+ 
+   const [count, setCount] = useState(0);
+  
+  
         return(
          <SafeAreaView  style={{backgroundColor: "#eee", flex:1}}>
             <View style={{backgroundColor: "white", padding: 15}}>
@@ -30,6 +46,11 @@ export default function UploadScreen({navigation}) {
                 <View style={styles.container}>
                     <View style={styles.regform}>
                         <Text style={styles.header}>Upload Medicine Details</Text>
+                        <View>
+                           {/* {<Image source={require('../assets/check.png')} style={{ width: 70, height: 70 }}/>} */}
+                           <Fun count1={count}/>
+                        </View>
+                        <Button onPress={() => setCount(count + 1)} title="Choose Photo"/>
                         <TextInput style={styles.textinput} placeholder="Medicine Name" underlineColorAndroid={'transparent'}/>
                         <TextInput style={styles.textinput} placeholder="Manufacturer Name" underlineColorAndroid={'transparent'}/>
                         <TextInput style={styles.textinput} placeholder="Illness cured" underlineColorAndroid={'transparent'}/>
@@ -68,6 +89,7 @@ export function DatePicker() {
    const changeSelectedDate = (event, selectedDate) => {
       const currentDate = selectedDate || mydate;
       setDate(currentDate);
+      setShow(false);
    };
    const showMode = (currentMode) => {
       setShow(true);
@@ -98,9 +120,11 @@ export function TimePicker() {
     const [mydate, setDate] = useState(new Date());
     const [displaymode, setMode] = useState('time');
     const [isDisplayDate, setShow] = useState(false);
+    
     const changeSelectedDate = (event, selectedDate) => {
        const currentDate = selectedDate || mydate;
        setDate(currentDate);
+       setShow(false);
     };
     const showMode = (currentMode) => {
        setShow(true);
@@ -138,7 +162,7 @@ const styles = StyleSheet.create({
 //    },
    regform: {
       marginTop: 30,
-      marginBottom: 30,
+      marginBottom: 50,
         alignSelf: 'stretch',
     },
     header: {
@@ -161,7 +185,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
        // alignSelf: 'stretch',
         height: 40,
-        marginBottom: 30,
+        marginBottom: 15,
+        marginTop: 15,
         color: '#123456',
         borderBottomColor: '#f5f5f5',
         borderBottomWidth: 1,
@@ -169,11 +194,13 @@ const styles = StyleSheet.create({
     textinput: {
         alignSelf: 'stretch',
         height: 40,
-        marginBottom: 30,
+        marginBottom: 15,
+        marginTop: 15,
         color: '#123456',
         borderBottomColor: '#f5f5f5',
         borderBottomWidth: 1,
     },
+    
 
 });
 
