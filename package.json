@@ -36,11 +36,8 @@
     "react-native-elements": "^3.4.2",
     "react-native-expandable-card": "^1.0.3",
     "react-native-gesture-handler": "^2.6.1",
-<<<<<<< HEAD
     "react-native-image-picker": "^4.10.0",
-=======
     "react-native-paper": "^4.12.4",
->>>>>>> 87d8d82d3c40eadd67a14a9a6013e8528ade368c
     "react-native-reanimated": "^2.10.0",
     "react-native-safe-area-context": "4.3.1",
     "react-native-screens": "~3.15.0",
