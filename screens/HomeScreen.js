@@ -10,7 +10,7 @@ export default function HomeScreen({navigation}) {
 
     return (
         <SafeAreaView  style={{backgroundColor: "#eee", flex:1}}>
-            <View style={{backgroundColor: "white", padding: 15}}>
+            <View style={{backgroundColor: "white", padding: 10, paddingTop: 33}}>
                 <Navbar navigation={navigation}/>
                 <SearchBar />
             </View>

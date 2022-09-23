@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import {Text} from "react-native"
 import { StatusBar } from 'expo-status-bar';
 
 // formik
@@ -45,7 +46,7 @@ const LoginScreen = ({ navigation }) => {
         <StatusBar style="dark" />
         <InnerContainer>
           <PageLogo resizeMode="cover" source={require('./../assets/crocin.png')} />
-          <PageTitle>Bharat Meds</PageTitle>
+          <PageTitle>BharatMeds</PageTitle>
           <SubTitle>Account Login</SubTitle>
 
           <Formik
@@ -87,7 +88,11 @@ const LoginScreen = ({ navigation }) => {
                 {(
                   <StyledButton google={true}>
                     <Fontisto name="google" size={25} color={primary} />
-                    <ButtonText google={true}>Sign in with Google</ButtonText>
+                    <Text style={{
+                        paddingLeft: 15,
+                        fontSize: 16,
+                        color: 'white'
+                    }}>Sign in with Google</Text>
                   </StyledButton>
                 )}
 
