@@ -10,7 +10,7 @@ export default function Navbar({navigation}) {
                     paddingVertical: 6, 
                     paddingHorizontal: 16,
                     borderRadius: 30,
-                    marginTop: 7
+                    marginTop: 9
                 }}
                 >
             <Text style={{color:"black", fontSize: 18, fontWeight: '900'}}>BHARATMEDS</Text>
@@ -21,7 +21,7 @@ export default function Navbar({navigation}) {
                     paddingVertical: 6, 
                     paddingHorizontal: 16,
                     borderRadius: 30,
-                    marginTop: 7
+                    marginTop: 9
                 }}
                 onPress = {() => navigation.navigate('Login')}
             >

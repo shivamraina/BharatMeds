@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import {Text} from "react-native"
 import { StatusBar } from 'expo-status-bar';
 
 // formik
@@ -36,92 +37,8 @@ import { Octicons, Fontisto, Ionicons } from '@expo/vector-icons';
 // keyboard avoiding view
 import KeyboardAvoidingWrapper from './../components/KeyboardAvoidingWrapper';
 
-// api client
-import axios from 'axios';
-
-// Google Signin
-import * as Google from 'expo-google-app-auth';
-
-// Async storage
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-// credentials context
-import { CredentialsContext } from './../components/CredentialsContext';
-
 const LoginScreen = ({ navigation }) => {
   const [hidePassword, setHidePassword] = useState(true);
-  const [message, setMessage] = useState();
-  const [messageType, setMessageType] = useState();
-  const [googleSubmitting, setGoogleSubmitting] = useState(false);
-
-  // credentials context
-  const {storedCredentials, setStoredCredentials} = useContext(CredentialsContext);
-
-  const handleLogin = (credentials, setSubmitting) => {
-    handleMessage(null);
-    const url = '';
-    axios
-      .post(url, credentials)
-      .then((response) => {
-        const result = response.data;
-        const { status, message, data } = result;
-
-        if (status !== 'SUCCESS') {
-          handleMessage(message, status);
-        } else {
-          persistLogin({ ...data[0] }, message, status);
-        }
-        setSubmitting(false);
-      })
-      .catch((error) => {
-        setSubmitting(false);
-        handleMessage('An error occurred. Check your network and try again');
-        console.log(error.toJSON());
-      });
-  };
-
-  const handleMessage = (message, type = '') => {
-    setMessage(message);
-    setMessageType(type);
-  };
-
-  const handleGoogleSignin = ({navigation}) => {
-    setGoogleSubmitting(true);
-    const config = {
-      clientId: `802966816069-o0ahg62le2b6adbl7tmrrm2e7cagaodp.apps.googleusercontent.com`,
-      scopes: ['profile', 'email'],
-    };
-
-    Google.logInAsync(config)
-      .then((result) => {
-        const { type, user } = result;
-        if (type == 'success') {
-          const { email, name, photoUrl } = user;
-          persistLogin({ email, name, photoUrl }, 'Google signin successful', 'SUCCESS');
-        } else {
-          handleMessage('Google Signin was cancelled');
-        }
-        setGoogleSubmitting(false);
-      })
-      .catch((error) => {
-        handleMessage('An error occurred. Check your network and try again');
-        console.log(error);
-        setGoogleSubmitting(false);
-      });
-  };
-
-  // Persisting login
-  const persistLogin = (credentials, message, status) => {
-    AsyncStorage.setItem('BharatMedsCredentials', JSON.stringify(credentials))
-      .then(() => {
-        handleMessage(message, status);
-        setStoredCredentials(credentials);
-      })
-      .catch((error) => {
-        handleMessage('Persisting login failed');
-        console.log(error);
-      });
-  };
 
   return (
     <KeyboardAvoidingWrapper>
@@ -129,19 +46,11 @@ const LoginScreen = ({ navigation }) => {
         <StatusBar style="dark" />
         <InnerContainer>
           <PageLogo resizeMode="cover" source={require('./../assets/crocin.png')} />
-          <PageTitle>Bharat Meds</PageTitle>
+          <PageTitle>BharatMeds</PageTitle>
           <SubTitle>Account Login</SubTitle>
 
           <Formik
             initialValues={{ email: '', password: '' }}
-            onSubmit={(values, { setSubmitting }) => {
-              if (values.email == '' || values.password == '') {
-                handleMessage('Please fill in all fields');
-                setSubmitting(false);
-              } else {
-                handleLogin(values, setSubmitting);
-              }
-            }}
           >
             {({ handleChange, handleBlur, handleSubmit, values, isSubmitting }) => (
               <StyledFormArea>
@@ -168,36 +77,28 @@ const LoginScreen = ({ navigation }) => {
                   hidePassword={hidePassword}
                   setHidePassword={setHidePassword}
                 />
-                <MsgBox type={messageType}>{message}</MsgBox>
 
-                {!isSubmitting && (
+                {(
                   <StyledButton onPress={() => navigation.navigate('Home')}>
                     <ButtonText>Login</ButtonText>
                   </StyledButton>
                 )}
-                {isSubmitting && (
-                  <StyledButton disabled={true}>
-                    <ActivityIndicator size="large" color={primary} />
-                  </StyledButton>
-                )}
-
                 <Line />
 
-                {!googleSubmitting && (
-                  <StyledButton onPress={handleGoogleSignin} google={true}>
+                {(
+                  <StyledButton google={true}>
                     <Fontisto name="google" size={25} color={primary} />
-                    <ButtonText google={true}>Sign in with Google</ButtonText>
-                  </StyledButton>
-                )}
-                {googleSubmitting && (
-                  <StyledButton disabled={true} google={true}>
-                    <ActivityIndicator size="large" color={primary} />
+                    <Text style={{
+                        paddingLeft: 15,
+                        fontSize: 16,
+                        color: 'white'
+                    }}>Sign in with Google</Text>
                   </StyledButton>
                 )}
 
                 <ExtraView>
                   <ExtraText>Don't have an account already? </ExtraText>
-                  <TextLink onPress={() => navigation.navigate('Signup')}>
+                  <TextLink onPress={() => navigation.navigate('Login')}>
                     <TextLinkContent>Signup</TextLinkContent>
                   </TextLink>
                 </ExtraView>

@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, StyleSheet, View, Text  } from 'react-native';
 
 export default function SubmittedScreen({navigation}) {
-    setTimeout(function(){navigation.navigate('Home')}, 2000)
+    setTimeout(function(){navigation.push('Home')}, 2000)
         return(
             <View style={styles.image} >
                 <Image source={require('../assets/check.png')} style={{ width: 70, height: 70 }}/>

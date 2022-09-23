@@ -38,43 +38,43 @@ export default function UploadScreen({navigation}) {
   
         return(
          <SafeAreaView  style={{backgroundColor: "#eee", flex:1}}>
-            <View style={{backgroundColor: "white", padding: 15}}>
-         <Navbar navigation={navigation}/>
-         <Divider style={{ marginTop: 15}} leadingInset={16} />
-            <Formik>
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={styles.container}>
-                    <View style={styles.regform}>
-                        <Text style={styles.header}>Upload Medicine Details</Text>
-                        <View>
-                           {/* {<Image source={require('../assets/check.png')} style={{ width: 70, height: 70 }}/>} */}
-                           <Fun count1={count}/>
+            <View style={{backgroundColor: "white", padding: 10, paddingTop: 33}}>
+                <Navbar navigation={navigation}/>
+                <Divider style={{ marginTop: 15}} leadingInset={16} />
+                <Formik>
+                    <ScrollView showsVerticalScrollIndicator={false}>
+                        <View style={styles.container}>
+                            <View style={styles.regform}>
+                                <Text style={styles.header}>Upload Medicine Details</Text>
+                                <View>
+                                    {/* {<Image source={require('../assets/check.png')} style={{ width: 70, height: 70 }}/>} */}
+                                    <Fun count1={count}/>
+                                 </View>
+                                 <Button onPress={() => setCount(count + 1)} title="Choose Photo"/>
+                                <TextInput style={styles.textinput} placeholder="Medicine Name" underlineColorAndroid={'transparent'}/>
+                                <TextInput style={styles.textinput} placeholder="Manufacturer Name" underlineColorAndroid={'transparent'}/>
+                                <TextInput style={styles.textinput} placeholder="Illness cured" underlineColorAndroid={'transparent'}/>
+                                <Text style={styles.datePicker}>
+                                <Text>Expiry Date</Text>
+                                <DatePicker />
+                                </Text>
+                                <TextInput style={styles.textinput} placeholder="Quantity" underlineColorAndroid={'transparent'}/>
+                                <Text style={styles.datePicker}>
+                                <Text>Pickup Date</Text>
+                                <DatePicker />
+                                </Text>
+                                <Text style={styles.datePicker}>
+                                <Text>Pickup Time</Text>
+                                <TimePicker />
+                                </Text>
+                                <View>
+                                    <RadioButton PROP={values} />
+                                </View>
+                                <Button onPress = {()=> navigation.navigate('SubmittedScreen')} title="Submit"/>
+                            </View>
                         </View>
-                        <Button onPress={() => setCount(count + 1)} title="Choose Photo"/>
-                        <TextInput style={styles.textinput} placeholder="Medicine Name" underlineColorAndroid={'transparent'}/>
-                        <TextInput style={styles.textinput} placeholder="Manufacturer Name" underlineColorAndroid={'transparent'}/>
-                        <TextInput style={styles.textinput} placeholder="Illness cured" underlineColorAndroid={'transparent'}/>
-                        <Text style={styles.datePicker}>
-                        <Text>Expiry Date</Text>
-                        <DatePicker />
-                        </Text>
-                        <TextInput style={styles.textinput} placeholder="Quantity" underlineColorAndroid={'transparent'}/>
-                        <Text style={styles.datePicker}>
-                        <Text>Pickup Date</Text>
-                        <DatePicker />
-                        </Text>
-                        <Text style={styles.datePicker}>
-                        <Text>Pickup Time</Text>
-                        <TimePicker />
-                        </Text>
-                        <View>
-                            <RadioButton PROP={values} />
-                        </View>
-                        <Button onPress = {()=> navigation.navigate('SubmittedScreen')} title="Submit"/>
-                    </View>
-                </View>
-            </ScrollView>
-            </Formik>
+                    </ScrollView>
+                </Formik>
             </View>
         </SafeAreaView>
         );
